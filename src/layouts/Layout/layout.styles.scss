@@ -1,0 +1,23 @@
+.layout {
+  width: 100vw;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: auto;
+
+  background-image: url('../../assets/img/bg_night.jpg');
+
+  &.light {
+    background-image: url('../../assets/img/bg_day.jpg');
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  @-moz-document url-prefix() {
+    scrollbar-width: none;
+  }
+}

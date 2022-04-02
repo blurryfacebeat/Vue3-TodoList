@@ -1,0 +1,65 @@
+@import '~@/assets/styles/colors.scss';
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.todo-list__input {
+  width: 87%;
+  margin-bottom: 30px;
+  padding: 10px 15px;
+
+  font-family: inherit;
+  font-size: 16px;
+  color: $gainsborough;
+
+  border: 1px solid $black-green;
+  border-radius: 4px;
+  outline: none;
+  background-color: $grayish-blue;
+  caret-color: $gainsborough;
+
+  &::placeholder {
+    color: $gray-window;
+  }
+}
+
+.todo-list__items {
+  display: flex;
+  flex-direction: column;
+  padding: 0 45px;
+  margin-bottom: 40px;
+  gap: 10px;
+  width: 100%;
+  min-height: 300px;
+  max-height: 450px;
+
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    background-color: $black-green;
+  }
+
+  @-moz-document url-prefix() {
+    scrollbar-width: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $bright-purple;
+  }
+}
+
+.todo-list__empty {
+  margin-bottom: 40px;
+
+  font-size: 18px;
+  color: $gainsborough;
+  font-weight: 500;
+}

@@ -1,0 +1,35 @@
+@import '~@/assets/styles/colors.scss';
+
+.fade-enter-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.todo-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 80%;
+  max-width: 680px;
+  max-height: 800px;
+  overflow: scroll;
+  overscroll-behavior: contain;
+  margin-bottom: 50px;
+
+  background-color: $space;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  @-moz-document url-prefix() {
+    scrollbar-width: none;
+  }
+}

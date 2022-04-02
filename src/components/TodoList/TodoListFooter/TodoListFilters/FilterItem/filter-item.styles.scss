@@ -1,0 +1,23 @@
+@import '~@/assets/styles/colors.scss';
+
+.filter-item {
+  color: $gainsborough;
+  font-size: 16px;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &.active {
+    color: $blush;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $blush-darkness2;
+    }
+  }
+
+  &:active {
+    color: $blush-darkness2;
+  }
+}

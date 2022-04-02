@@ -1,0 +1,182 @@
+@import '~@/assets/styles/colors.scss';
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@mixin dot-mixin() {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+  background-color: $gainsborough;
+}
+
+.todo-list__item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  user-select: none;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      .name {
+        color: $blush;
+      }
+    }
+  }
+
+  &:active {
+    .name {
+      color: $blush-darkness2;
+    }
+  }
+}
+
+.checkbox {
+  display: none;
+  position: absolute;
+  top: -10000px;
+  left: -10000px;
+  font-size: 0;
+}
+
+.checkbox:checked + .decorate-wrapper {
+  .fake-checkbox .okay-icon {
+    opacity: 1;
+  }
+
+  .name {
+    color: $blush-darkness2;
+  }
+}
+
+.decorate-wrapper {
+  display: flex;
+}
+
+.fake-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+
+  background-color: $grayish-blue;
+  border: 1px solid $black-green;
+  border-radius: 4px;
+}
+
+.okay-icon {
+  opacity: 0;
+  transition: all 0.2s ease;
+  fill: $gainsborough;
+}
+
+.name {
+  max-width: 530px;
+
+  font-size: 16px;
+  color: $gainsborough;
+  word-break: break-all;
+
+  transition: all 0.2s ease;
+}
+
+.menu-container {
+  position: relative;
+}
+
+.menu-icon {
+  @include dot-mixin;
+  display: block;
+  transform: rotate(90deg);
+
+  cursor: pointer;
+
+  &::before {
+    @include dot-mixin;
+    content: '';
+    display: inline-block;
+  }
+
+  &::after {
+    @include dot-mixin;
+    content: '';
+    display: block;
+  }
+}
+
+.actions-menu {
+  position: absolute;
+  top: 25px;
+  right: -7px;
+  display: flex;
+  padding: 10px;
+  z-index: 2;
+
+  background-color: $grayish-blue;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    right: 10px;
+    top: -7px;
+
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid $grayish-blue;
+  }
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  cursor: pointer;
+
+  svg {
+    fill: $gainsborough;
+
+    transition: all 0.2s ease;
+  }
+
+  p {
+    color: $gainsborough;
+
+    transition: all 0.2s ease;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      svg {
+        fill: $gray-window;
+      }
+
+      p {
+        color: $gray-window;
+      }
+    }
+  }
+}

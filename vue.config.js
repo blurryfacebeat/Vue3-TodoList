@@ -11,4 +11,6 @@ module.exports = {
       .use('vue-svg-loader')
       .loader('vue-svg-loader');
   },
+
+  publicPath: process.env.NODE_ENV === 'production' ? '/Vue3-TodoList/' : '/',
 };
